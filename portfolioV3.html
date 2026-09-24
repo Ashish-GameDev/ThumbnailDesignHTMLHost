@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>[Studio Name / Your Name] — Creative Director / Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+  /* =========================================================
+     GLOBAL
+  ========================================================= */
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --maroon: #7B1216;
+    --maroon-deep: #650D11;
+    --red: #A81D23;
+    --cream: #F3EAD6;
+    --ink: #33201E;
+    --muted: #4E3B34;
+    --line: #B4A183;
+  }
+
+  body {
+    background: var(--maroon);
+    color: var(--cream);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+  }
+
+  ::selection {
+    background: var(--red);
+    color: var(--cream);
+  }
+
+
+  /* =========================================================
+     NAV
+  ========================================================= */
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 44px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: opacity .18s ease;
+  }
+
+  .nav a:hover {
+    opacity: .6;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 36px;
+  }
+
+
+  /* =========================================================
+     HERO
+  ========================================================= */
+
+  .hero {
+    text-align: center;
+    padding: 24px 20px 66px;
+  }
+
+  .script {
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
+  }
+
+  .hero .script {
+    font-size: clamp(28px, 4vw, 44px);
+    margin-bottom: 4px;
+  }
+
+  .hero h1 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(50px, 11vw, 118px);
+    line-height: .96;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+
+  /* =========================================================
+     LAYOUT / CARDS
+  ========================================================= */
+
+  .container {
+    max-width: 1032px;
+    margin: 0 auto;
+    padding: 0 26px;
+  }
+
+  .card {
+    background: var(--cream);
+    color: var(--ink);
+    border-radius: 18px;
+    position: relative;
+  }
+
+  section[id] {
+    scroll-margin-top: 24px;
+  }
+
+  .bookmark {
+    position: absolute;
+    top: 0;
+    right: 30px;
+
+    background: var(--red);
+    color: var(--cream);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .5px;
+
+    padding: 10px 13px 19px;
+
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      50% 74%,
+      0 100%
+    );
+
+    line-height: 1;
+    z-index: 2;
+  }
+
+
+  /* =========================================================
+     ABOUT
+  ========================================================= */
+
+  .about-card {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 42px;
+
+    padding: 26px 30px;
+    margin-bottom: 24px;
+  }
+
+  .about-img {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .about-img img {
+    width: 100%;
+    height: 100%;
+    min-height: 262px;
+    object-fit: cover;
+  }
+
+  .about-body {
+    padding: 14px 0;
+    max-width: 400px;
+  }
+
+  .about-body h2 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: var(--red);
+
+    font-size: 34px;
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .about-body > p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .about-body h3 {
+    font-size: 12px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: #5D181B;
+    margin-bottom: 8px;
+  }
+
+  .skills {
+    list-style: none;
+  }
+
+  .skills li {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .skills li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--ink);
+  }
+
+
+  /* =========================================================
+     PROJECTS
+  ========================================================= */
+
+  .projects {
+    display: grid;
+
+    grid-template-columns: 44fr 56fr;
+
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .projects-head {
+    background: var(--red);
+    color: var(--cream);
+
+    border-radius: 18px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 24px;
+  }
+
+  .projects-head .script {
+    font-size: clamp(32px, 4vw, 42px);
+  }
+
+  .projects-head h2 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+
+    font-size: clamp(42px, 5.5vw, 56px);
+
+    letter-spacing: 1px;
+    line-height: 1;
+
+    text-transform: uppercase;
+  }
+
+  .row2 {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px;
+  }
+
+
+  /* =========================================================
+     PROJECT CARDS
+  ========================================================= */
+
+  .project-card {
+    padding: 18px;
+
+    /*
+      IMPORTANT:
+      The card itself will not be affected by the natural
+      dimensions of the thumbnail image.
+    */
+
+    min-width: 0;
+  }
+
+
+  /* =========================================================
+     THUMBNAIL HOLDER
+  ========================================================= */
+
+  .yt-thumb {
+
+    /*
+      THIS controls the thumbnail box.
+
+      The image CANNOT change this size.
+    */
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #111;
+
+    /*
+      Prevent accidental flex/grid sizing issues.
+    */
+    min-height: 0;
+  }
+
+
+  /* =========================================================
+     THUMBNAIL IMAGE
+
+     THIS IS THE IMPORTANT PART
+  ========================================================= */
+
+  .yt-thumb img {
+
+    /*
+      Never allow the image's original resolution
+      to change the holder's dimensions.
+    */
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    /*
+      Fill the 16:9 holder.
+
+      If your thumbnail has a different ratio,
+      the edges will be cropped.
+    */
+
+    object-fit: cover;
+
+    object-position: center;
+
+    /*
+      Prevent browser from treating the image
+      as an inline/intrinsic-size element.
+    */
+
+    max-width: none;
+    max-height: none;
+  }
+
+
+  /* =========================================================
+     YOUTUBE DURATION
+  ========================================================= */
+
+  .yt-duration {
+
+    position: absolute;
+
+    right: 8px;
+    bottom: 8px;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    padding: 2px 6px;
+
+    border-radius: 4px;
+
+    z-index: 2;
+  }
+
+
+  /* =========================================================
+     PROJECT INFO
+  ========================================================= */
+
+  .yt-info {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 12px;
+
+    min-width: 0;
+  }
+
+
+  /* Avatar */
+
+  .yt-avatar {
+
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    border-radius: 50%;
+
+    background: #C9B78E;
+
+    background-size: cover;
+    background-position: center;
+
+    flex-shrink: 0;
+  }
+
+
+  /* Text container */
+
+  .yt-text {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+  }
+
+
+  /* Title */
+
+  .yt-title {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    color: var(--ink);
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+  }
+
+
+  .yt-channel {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .yt-meta {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+
+  /* =========================================================
+     CONTACT
+  ========================================================= */
+
+  .contact-card {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.1fr;
+
+    gap: 48px;
+
+    padding: 44px 46px 40px;
+
+    margin-bottom: 46px;
+  }
+
+  .contact-left h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--red);
+
+    font-weight: 500;
+
+    font-size: 37px;
+
+    line-height: 1.18;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+  }
+
+  .contact-left p {
+
+    font-size: 14px;
+
+    color: var(--muted);
+
+    margin-bottom: 28px;
+  }
+
+
+  /* =========================================================
+     CONTACT ICONS
+  ========================================================= */
+
+  .contact-icons {
+
+    display: flex;
+
+    gap: 20px;
+  }
+
+  .contact-icons a {
+
+    color: #38201C;
+
+    display: inline-flex;
+
+    transition:
+      opacity .18s ease,
+      transform .18s ease;
+  }
+
+  .contact-icons a:hover {
+
+    opacity: .55;
+
+    transform: translateY(-2px);
+  }
+
+  .contact-icons svg {
+
+    width: 44px;
+    height: 44px;
+  }
+
+
+  /* =========================================================
+     GOOGLE FORM
+  ========================================================= */
+
+  .contact-right {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  .gform-btn {
+
+    display: inline-flex;
+
+    transition:
+      transform .18s ease,
+      opacity .18s ease;
+  }
+
+  .gform-btn:hover {
+
+    transform: translateY(-3px);
+
+    opacity: .85;
+  }
+
+  .gform-hint {
+
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+  }
+
+
+  /* =========================================================
+     FOOTER
+  ========================================================= */
+
+  footer {
+
+    padding: 4px 20px 44px;
+
+    text-align: center;
+  }
+
+  footer .legal {
+
+    font-size: 12px;
+
+    margin-bottom: 22px;
+
+    letter-spacing: .2px;
+  }
+
+  footer .legal a {
+
+    transition: opacity .18s ease;
+  }
+
+  footer .legal a:hover {
+
+    opacity: .65;
+
+    text-decoration: underline;
+
+    text-underline-offset: 3px;
+  }
+
+  .socials {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 42px;
+  }
+
+  .socials a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12.5px;
+
+    transition: opacity .18s ease;
+  }
+
+  .socials a:hover {
+
+    opacity: .65;
+  }
+
+  .socials svg {
+
+    width: 16px;
+    height: 16px;
+  }
+
+  .be {
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    letter-spacing: .3px;
+  }
+
+
+  /* =========================================================
+     RESPONSIVE
+  ========================================================= */
+
+  @media (max-width: 920px) {
+
+    .projects {
+
+      grid-template-columns: 1fr;
+    }
+
+    .row2 {
+
+      grid-template-columns: 1fr;
+    }
+
+    .about-card {
+
+      grid-template-columns: 1fr;
+
+      gap: 24px;
+    }
+
+    .about-img img {
+
+      min-height: 0;
+
+      height: 340px;
+    }
+
+    .contact-card {
+
+      grid-template-columns: 1fr;
+
+      gap: 36px;
+    }
+  }
+
+
+  @media (max-width: 700px) {
+
+    .nav {
+
+      padding: 20px 22px;
+    }
+
+    .nav-right {
+
+      gap: 18px;
+    }
+
+    .container {
+
+      padding: 0 18px;
+    }
+
+    .hero {
+
+      padding-bottom: 48px;
+    }
+
+    .contact-card {
+
+      padding: 30px 24px;
+    }
+
+    .bookmark {
+
+      right: 20px;
+    }
+  }
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="nav">
+
+  <a href="#top">
+    Home
+  </a>
+
+  <nav class="nav-right" aria-label="Primary navigation">
+
+    <a href="#work">
+      Work
+    </a>
+
+    <a href="#about">
+      About
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <p class="script">
+    Thumbprints Thumbnails
+  </p>
+
+  <h1>
+    Your&nbsp;Click&nbsp;<br>
+    Starts&nbsp;Here
+  </h1>
+
+  <p class="hero-sub">
+    Ashish Sonawane
+  </p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="card about-card" id="about">
+
+  <span class="bookmark">
+    01
+  </span>
+
+  <div class="about-img">
+
+    <img
+      src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExY292c3lza3hubGoxYXNrcTh4NGVqYjk0amR1ZHdtMnVxcTNvMWJqayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kZqbBT64ECtjy/giphy.gif"
+      alt="Portrait of the creative director"
+    >
+
+  </div>
+
+
+  <div class="about-body">
+
+    <h2>
+      About Me
+    </h2>
+
+    <p>
+      I’m an indie game developer building my own studio and my first games.
+      To fund that journey, I’m turning my creative skills into freelance
+      thumbnail design. Every thumbnail I create helps me earn, grow,
+      and get closer to shipping my games.
+    </p>
+
+    <h3>
+      Core Skills/Expertise
+    </h3>
+
+    <ul class="skills">
+
+      <li>Creative Direction</li>
+      <li>Brand Identity</li>
+      <li>Digital Design</li>
+      <li>User Research</li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section class="projects" id="work">
+
+
+  <!-- PROJECT HEADER -->
+
+  <div class="projects-head">
+
+    <span class="bookmark">
+      02
+    </span>
+
+    <p class="script">
+      Selected
+    </p>
+
+    <h2>
+      Projects
+    </h2>
+
+  </div>
+
+
+
+  <!-- =======================================================
+       PROJECT #1
+  ======================================================== -->
+
+  <article class="card project-card">
+
+    <div class="yt-thumb">
+
+      <!--
+        PUT YOUR THUMBNAIL URL HERE
+      -->
+
+      <img
+        src="https://github.com/Ashish-GameDev/ThumbnailDesignHTMLHost/blob/main/Thumbnail11.png?raw=true"
+        alt="Project thumbnail"
+      >
+
+      <span class="yt-duration">
+        0:00
+      </span>
+
+    </div>
+
+
+    <div class="yt-info">
+
+      <div class="yt-avatar"></div>
+
+      <div class="yt-text">
+
+        <div class="yt-title">
+          Your project title goes here
+        </div>
+
+        <div class="yt-channel">
+          [Studio Name]
+        </div>
+
+        <div class="yt-meta">
+          0 views • 0 time ago
+        </div>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- =======================================================
+       PROJECTS #2 + #3
+  ======================================================== -->
+
+  <div class="row2">
+
+
+    <!-- PROJECT #2 -->
+
+    <article class="card project-card">
+
+      <div class="yt-thumb">
+
+        <!-- PUT THUMBNAIL #2 URL HERE -->
+
+        <img
+          src="https://github.com/Ashish-GameDev/ThumbnailDesignHTMLHost/blob/main/Thumbnail11.png?raw=true"
+          alt="Project thumbnail"
+        >
+
+        <span class="yt-duration">
+          0:00
+        </span>
+
+      </div>
+
+
+      <div class="yt-info">
+
+        <div class="yt-avatar"></div>
+
+        <div class="yt-text">
+
+          <div class="yt-title">
+            Your project title goes here
+          </div>
+
+          <div class="yt-channel">
+            [Studio Name]
+          </div>
+
+          <div class="yt-meta">
+            0 views • 0 time ago
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PROJECT #3 -->
+
+    <article class="card project-card">
+
+      <div class="yt-thumb">
+
+        <!-- PUT THUMBNAIL #3 URL HERE -->
+
+        <img
+          src="https://example.com/thumbnail3.jpg"
+          alt="Project thumbnail"
+        >
+
+        <span class="yt-duration">
+          0:00
+        </span>
+
+      </div>
+
+
+      <div class="yt-info">
+
+        <div class="yt-avatar"></div>
+
+        <div class="yt-text">
+
+          <div class="yt-title">
+            Your project title goes here
+          </div>
+
+          <div class="yt-channel">
+            [Studio Name]
+          </div>
+
+          <div class="yt-meta">
+            0 views • 0 time ago
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="card contact-card" id="contact">
+
+
+  <div class="contact-left">
+
+    <h2>
+      Let's Work<br>
+      Together
+    </h2>
+
+    <p>
+      Email us or fill out our Google Form:
+    </p>
+
+
+    <div class="contact-icons">
+
+      <!-- EMAIL -->
+
+      <a
+        href="mailto:thumbprint.thumbnails@gmail.com"
+        aria-label="Email us"
+      >
+
+        <svg
+          viewBox="0 0 48 48"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+
+          <rect
+            x="4"
+            y="15"
+            width="27"
+            height="21"
+            rx="2.5"
+          />
+
+          <path d="M5 17.5l12.5 9 12.5-9"/>
+
+          <path d="M24 34l15-15"/>
+
+          <path d="M31.5 19H39v7.5"/>
+
+        </svg>
+
+      </a>
+
+
+
+      <!-- GOOGLE FORM -->
+
+      <a
+        href="https://forms.gle/iCCQ5JuwnPHiP7NFA"
+        target="_blank"
+        rel="noopener"
+        aria-label="Open our Google Form"
+      >
+
+        <svg
+          viewBox="0 0 48 48"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+
+          <path d="M13 5h15l8 8v30H13z"/>
+
+          <path d="M28 5v8h8"/>
+
+          <path d="M19 22h11M19 28h11M19 34h7"/>
+
+        </svg>
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="contact-right">
+
+    <a
+      class="gform-btn"
+      href="https://forms.gle/iCCQ5JuwnPHiP7NFA"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <svg
+        width="128"
+        height="128"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+
+        <rect
+          x="4"
+          y="2"
+          width="16"
+          height="20"
+          rx="2.5"
+          fill="#A78BFA"
+        />
+
+        <path
+          d="M8 7.5h8M8 11h8"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M8 14.5h4"
+          stroke="#fff"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+
+        <circle
+          cx="16.2"
+          cy="17.2"
+          r="4"
+          fill="#F3EAD6"
+        />
+
+        <path
+          d="M14.4 17.2l1.2 1.2 2.4-2.6"
+          stroke="#7B1216"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+      </svg>
+
+    </a>
+
+
+    <p class="gform-hint">
+      Fill Out Our Google Form
+    </p>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <p class="legal">
+
+    © 2026 Thumbprints.
+    All rights reserved.
+
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <a href="#contact">
+      Contact
+    </a>
+
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+
+    <a href="#top">
+      privacy policy
+    </a>
+
+  </p>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+  /*
+    No form JavaScript is needed currently because
+    the contact section uses a Google Form link.
+
+    The previous script tried to access elements that
+    don't exist in this HTML:
+
+      contactForm
+      formNote
+      docIcon
+      fieldName
+
+    Those references have therefore been removed.
+  */
+
+</script>
+
+
+</body>
+</html>
